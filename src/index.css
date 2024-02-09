@@ -1,0 +1,17 @@
+.container {
+  padding: 20px 10%;
+}
+.dark-mode {
+  background-color: #050505;
+  color: #ffffff;
+}
+
+.mono {
+  font-family: monospace;
+}
+.serif {
+  font-family: serif;
+}
+.san-serif {
+  font-family: sans-serif;
+}
