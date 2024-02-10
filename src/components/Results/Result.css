@@ -21,9 +21,61 @@
 li::marker {
   color: #8f19e8;
 }
-
+li {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+.phonetic {
+  color: #a445ed;
+  font-size: 24px;
+}
 .synonym {
   color: #8f19e8;
   font-weight: bold;
   margin-left: 5px;
+  font-size: 20px;
+}
+.synonyms_box {
+  margin-top: 50px;
+}
+.synonyms_title {
+  font-size: 20px;
+  color: #757575;
+}
+.title {
+  font-size: 64px;
+  margin-bottom: -12px;
+}
+.play-icon {
+  cursor: pointer;
+  height: 75px;
+  margin-top: -20px;
+}
+hr {
+  opacity: 0.3;
+  margin: 30px 0;
+}
+.new-window {
+  margin-left: 8px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+  }
+  .play-icon {
+    height: 48px;
+  }
+  .synonyms_title {
+    font-size: 16px;
+  }
+  .synonym {
+    font-size: 16px;
+  }
+  .definition-title {
+    font-size: 18px;
+  }
+  .phonetic {
+    font-size: 18px;
+  }
 }

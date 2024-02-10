@@ -36,7 +36,7 @@ const AppHeader = () => {
 
   return (
     <header className="page-header">
-      <img src={logo} />
+      <img src={logo} height={"32px"} width={"32px"} />
       <div className="header-selectors">
         <select onChange={handleFontChange}>
           <option value="mono">Mono</option>

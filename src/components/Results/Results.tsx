@@ -1,4 +1,5 @@
 import playIcon from "../../assets/images/icon-play.svg";
+import source from "../../assets/images/icon-new-window.svg";
 import "./Result.css";
 
 interface ResultsProps {
@@ -40,8 +41,10 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
         <div key={index}>
           <div className="result-word">
             <div>
-              <h1>{(item as { word: string; phonetic: string }).word}</h1>
-              <p>
+              <h1 className="title">
+                {(item as { word: string; phonetic: string }).word}
+              </h1>
+              <p className="phonetic">
                 {
                   (
                     item as {
@@ -54,6 +57,7 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
             </div>
             <div>
               <img
+                className="play-icon"
                 src={playIcon}
                 alt="play"
                 onClick={() =>
@@ -72,6 +76,7 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
                   <p>{(meaning as { partOfSpeech: string }).partOfSpeech}</p>
                   <span className="line-definition"></span>
                 </div>
+                <p className="synonyms_title">Meaning</p>
                 <ul>
                   {(
                     meaning as { definitions: Array<{ definition: string }> }
@@ -79,8 +84,8 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
                     <li key={index}>{definition.definition}</li>
                   ))}
                 </ul>
-                <p>
-                  Synonyms:{" "}
+                <p className="synonyms_box">
+                  <span className="synonyms_title">Synonyms:</span>{" "}
                   {(meaning as { synonyms: string[] }).synonyms.map(
                     (s, index) => (
                       <span key={index} className="synonym">
@@ -92,11 +97,17 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
               </div>
             )
           )}
+          <hr />
           <p>
             {" "}
-            Source:{" "}
+            <span className="synonyms_title">Source:</span>{" "}
             {(item as { sourceUrls: string[] }).sourceUrls.map((url, index) => (
-              <span key={index}>{url} </span>
+              <span key={index}>
+                {url}
+                <a href={url} target="_blank">
+                  <img className="new-window" src={source} alt="source" />
+                </a>
+              </span>
             ))}
           </p>
         </div>

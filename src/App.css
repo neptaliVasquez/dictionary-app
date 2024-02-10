@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Lora", serif;
+  src: url("./assets/fonts/lora/static/Lora-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "inconsolata", monospace;
+  src: url(./assets/fonts/inconsolata/static/Inconsolata-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "inter", sans-serif;
+  src: url(./assets/fonts/inter/static/Inter-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
