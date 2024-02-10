@@ -11,3 +11,7 @@ input[type="text"] {
   background-repeat: no-repeat;
   background-position: 97% 50%;
 }
+h1 {
+  font-size: 48px;
+  text-align: center;
+}

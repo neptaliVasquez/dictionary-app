@@ -30,8 +30,9 @@ const SearchBar = () => {
 
   return (
     <div>
+      <h1>English Dictionary</h1>
       <form onSubmit={handleSearchWord}>
-        <input type="text" placeholder="Search..." />
+        <input type="text" placeholder="Search for a word..." />
       </form>
       <Results data={data} isLoading={isLoading} error={error} />
     </div>
