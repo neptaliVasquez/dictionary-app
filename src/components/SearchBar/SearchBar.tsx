@@ -10,7 +10,7 @@ const SearchBar = () => {
   const handleSearchWord = async (e: React.FormEvent<HTMLFormElement>) => {
     setError(null);
     e.preventDefault();
-    const searchWord = e.currentTarget[0].value;
+    const searchWord = (e.currentTarget[0] as HTMLInputElement).value;
     setIsLoading(true);
     try {
       const response = await fetch(
@@ -23,7 +23,7 @@ const SearchBar = () => {
       setData(data);
       setIsLoading(false);
     } catch (error) {
-      setError(error);
+      setError(error as Error);
       setIsLoading(false);
     }
   };
