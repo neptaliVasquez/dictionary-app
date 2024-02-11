@@ -15,3 +15,10 @@
 .san-serif {
   font-family: "inter", sans-serif;
 }
+.dark-select {
+  color: #ffffff;
+  background-color: #050505;
+}
+.white-text {
+  color: #ffffff;
+}

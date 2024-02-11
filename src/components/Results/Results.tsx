@@ -24,11 +24,11 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="processing intermittent-text">Loading... </p>;
   }
 
   if (error) {
-    return <p>{error.message}</p>;
+    return <p className="processing error">{error.message}</p>;
   }
 
   if (!data || data.length === 0) {
@@ -41,9 +41,9 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
         <div key={index}>
           <div className="result-word">
             <div>
-              <h1 className="title">
+              <h2 className="title">
                 {(item as { word: string; phonetic: string }).word}
-              </h1>
+              </h2>
               <p className="phonetic">
                 {
                   (
@@ -102,7 +102,7 @@ const Results = ({ data, isLoading, error }: ResultsProps) => {
             {" "}
             <span className="synonyms_title">Source:</span>{" "}
             {(item as { sourceUrls: string[] }).sourceUrls.map((url, index) => (
-              <span key={index}>
+              <span key={index} className="source">
                 {url}
                 <a href={url} target="_blank">
                   <img className="new-window" src={source} alt="source" />

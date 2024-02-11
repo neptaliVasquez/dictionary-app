@@ -77,13 +77,14 @@ select {
   background-position: right 2px center;
   -webkit-appearance: none;
   background-color: transparent;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
-  width: 40%;
+  width: 110px;
 }
 select:focus {
   outline: none;
 }
+
 .line {
   border: 1px solid #e0e0e0;
   height: 30px;

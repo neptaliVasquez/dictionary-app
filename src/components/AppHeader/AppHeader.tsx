@@ -1,5 +1,6 @@
 import logo from "@/assets/images/logo.svg";
 import MoonIcon from "../MoonIcon/MoonIcon";
+import SearchBar from "../SearchBar/SearchBar";
 import "./AppHeader.css";
 import { useState } from "react";
 const AppHeader = () => {
@@ -35,22 +36,28 @@ const AppHeader = () => {
   };
 
   return (
-    <header className="page-header">
-      <img src={logo} height={"32px"} width={"32px"} />
-      <div className="header-selectors">
-        <select onChange={handleFontChange}>
-          <option value="mono">Mono</option>
-          <option value="serif">Serif</option>
-          <option value="sans">Sans Serif</option>
-        </select>
-        <div className="line"></div>
-        <label className="switch">
-          <input type="checkbox" onChange={handleDarkMode} />
-          <span className="slider round"></span>
-        </label>
-        <MoonIcon className={!darkMode ? "moon-light" : "moon-dark"} />
-      </div>
-    </header>
+    <>
+      <header className="page-header">
+        <img src={logo} height={"32px"} width={"32px"} />
+        <div className="header-selectors">
+          <select
+            className={darkMode ? "dark-select" : ""}
+            onChange={handleFontChange}
+          >
+            <option value="mono">Mono</option>
+            <option value="serif">Serif</option>
+            <option value="sans">Sans Serif</option>
+          </select>
+          <div className="line"></div>
+          <label className="switch">
+            <input type="checkbox" onChange={handleDarkMode} />
+            <span className="slider round"></span>
+          </label>
+          <MoonIcon className={!darkMode ? "moon-light" : "moon-dark"} />
+        </div>
+      </header>
+      <SearchBar darkMode={darkMode} />
+    </>
   );
 };
 export default AppHeader;

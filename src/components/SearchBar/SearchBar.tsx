@@ -2,7 +2,11 @@ import "./searchBar.css";
 import Results from "../Results/Results";
 import { useState } from "react";
 
-const SearchBar = () => {
+interface SearchBarProps {
+  darkMode: boolean;
+}
+
+const SearchBar = ({ darkMode }: SearchBarProps) => {
   const [data, setData] = useState<Array<object> | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<Error | null>(null);
@@ -32,7 +36,11 @@ const SearchBar = () => {
     <div>
       <h1>English Dictionary</h1>
       <form onSubmit={handleSearchWord}>
-        <input type="text" placeholder="Search for a word..." />
+        <input
+          type="text"
+          placeholder="Search for a word..."
+          className={darkMode ? "white-text" : ""}
+        />
       </form>
       <Results data={data} isLoading={isLoading} error={error} />
     </div>
