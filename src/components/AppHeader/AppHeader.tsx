@@ -2,7 +2,7 @@ import logo from "@/assets/images/logo.svg";
 import MoonIcon from "../MoonIcon/MoonIcon";
 import SearchBar from "../SearchBar/SearchBar";
 import "./AppHeader.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const AppHeader = () => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -34,6 +34,14 @@ const AppHeader = () => {
       document.documentElement.classList.add("san-serif");
     }
   };
+
+  useEffect(() => {
+    // Execute handleFontChange when component mounts
+    console.log("Component mounted");
+    handleFontChange({
+      target: { value: "mono" },
+    } as React.ChangeEvent<HTMLSelectElement>);
+  }, []);
 
   return (
     <>
